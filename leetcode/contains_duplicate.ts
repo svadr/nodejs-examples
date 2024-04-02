@@ -18,16 +18,16 @@ Output: true
  */
 
 function containsDuplicate(nums: number[]): boolean {
-    const map = new Map()
-
-    for (let i = 0; i < nums.length; i++){
-        if (map.has(nums[i])) {
+    const store = new Map()
+    
+    for (let i of nums) {
+        if (store.has(i)) {
             return true
-        } 
-        map.set(nums[i], 0)
+        }
+        store.set(i, 1)
     }
 
-    return false   
+    return false
 }
 
-console.log(containsDuplicate([1,2,3,4]))
+console.log(containsDuplicate([1,2,3,4,1]))
